@@ -6,7 +6,7 @@ const UrlContainer = ( { urls } ) => {
     return (
       <div key={url.short_url} className="url">
         <h3>{url.title}</h3>
-        <a href={url.short_url} target="blank">{url.short_url}</a>
+        <a data-cy='short-url' href={url.short_url} target="blank">{url.short_url}</a>
         <p>{url.long_url}</p>
       </div>
     )
