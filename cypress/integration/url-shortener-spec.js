@@ -11,4 +11,8 @@ describe('URl shortening', () => {
     .visit('http://localhost:3000')
   });
 
+  it('Should display page Title', () => {
+    cy.get('[data-cy=page-title]').should('contain', 'URL Shortener')
+  })
+
 });
