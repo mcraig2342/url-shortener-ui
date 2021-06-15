@@ -15,4 +15,9 @@ describe('URl shortening', () => {
     cy.get('[data-cy=page-title]').should('contain', 'URL Shortener')
   })
 
+  it('Should display shortened urls', () => {
+    cy.get('[data-cy=short-url]').should('contain', 'useshorturl')
+      .get('[data-cy=short-url]').should('have.length', 2)
+  })
+
 });
