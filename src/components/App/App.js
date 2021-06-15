@@ -11,6 +11,16 @@ export class App extends Component {
       urls: [],
       error: '',
     }
+    this.fetchNewUrls = this.fetchNewUrls.bind(this)
+  }
+
+  fetchNewUrls() {
+    getUrls()
+  .then(currentUrls => {
+    this.setState({urls: currentUrls.urls})
+  })
+  .catch(error => this.setState({ error: 'Couldnt fund URLs!'}))
+
   }
 
   componentDidMount() {
@@ -26,7 +36,7 @@ export class App extends Component {
       <main className="App">
         <header>
           <h1>URL Shortener</h1>
-          <UrlForm />
+          <UrlForm fetchNewUrls={this.fetchNewUrls}/>
         </header>
 
         <UrlContainer urls={this.state.urls}/>
