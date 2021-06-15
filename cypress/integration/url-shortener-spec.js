@@ -20,4 +20,12 @@ describe('URl shortening', () => {
       .get('[data-cy=short-url]').should('have.length', 2)
   })
 
+  it('Should display form with proper inputs', () => {
+     cy.get('[data-cy=form]>input').should('have.length', 2)
+       .get('[data-cy=form]>button').should('have.length', 1)
+       .get('[data-cy=title-input]').type('text').should('be.visible')
+       .get('[data-cy=url-input]').type('text').should('be.visible')
+
+  })
+
 });
