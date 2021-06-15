@@ -28,8 +28,9 @@ class UrlForm extends Component {
 
   render() {
     return (
-      <form>
+      <form data-cy='form'>
         <input
+          data-cy='title-input'
           type='text'
           placeholder='Title...'
           name='title'
@@ -38,6 +39,7 @@ class UrlForm extends Component {
         />
 
         <input
+          data-cy='url-input'
           type='text'
           placeholder='URL to Shorten...'
           name='urlToShorten'
