@@ -8,11 +8,17 @@ export class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      urls: []
+      urls: [],
+      error: '',
     }
   }
 
   componentDidMount() {
+    getUrls()
+  .then(currentUrls => {
+    this.setState({urls: currentUrls})
+  })
+  .catch(error => this.setState({ error: 'Couldnt fund URLs!'}))
   }
 
   render() {
