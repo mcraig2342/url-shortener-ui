@@ -16,7 +16,7 @@ export class App extends Component {
   componentDidMount() {
     getUrls()
   .then(currentUrls => {
-    this.setState({urls: currentUrls})
+    this.setState({urls: currentUrls.urls})
   })
   .catch(error => this.setState({ error: 'Couldnt fund URLs!'}))
   }
